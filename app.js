@@ -41,7 +41,7 @@ common.map_routes(routes_dir);
 // libの読み込み
 // ./modules/server内全てのjsをresuireする
 // app(express)を読み込めるようにするため
-common.require_of_all_js('./modules/lib');
+//common.require_of_all_js('./modules/lib');
 
 // メインの開始
 var main = require('./modules/main.js');
