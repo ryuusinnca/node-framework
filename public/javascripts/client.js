@@ -1,3 +1,6 @@
+// WebSocketサーバに接続
+var ws = new WebSocket('ws://172.16.145.136:8888/');
+
 jQuery(function($) {
 	"use strict";
 	//socket.ioのサーバにに接続

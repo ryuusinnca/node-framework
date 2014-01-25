@@ -28,6 +28,15 @@ server.listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
+
+// websocketサーバー作成
+var ws = require('websocket.io');
+var wsserver = ws.listen(8888, function(){
+  console.log("Websocket.io server listening on port " + 8888);
+});
+
+app.set('wsserver', wsserver);
+
 //socket.ioのインスタンス作成
 var io = require('socket.io').listen(server);
 app.set('io', io);
