@@ -19,3 +19,13 @@ ioの外部化
 ejsのサンプル ./views/index.ejs ./routes/index.js
 	・変数の表示
 	・forでリスト表示
+
+● node_moduleの設定方法
+下記コマンドをたたく
+npm install [module name]
+
+module kind
+・express
+・ejs
+・socket.io
+・mysql

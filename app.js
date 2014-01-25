@@ -32,6 +32,16 @@ server.listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 app.set('io', io);
 
+// mysqlのインスタンス作成
+var mysql = require('mysql').createConnection({
+  host: 'localhost',
+  database: 'node_game',
+  user: 'root',
+  password: '1234'
+});
+app.set('mysql', mysql);
+
+
 // ルーティンの自動登録
 var common_module = require('./modules/common')
   , common = new common_module()
@@ -42,6 +52,7 @@ common.map_routes(routes_dir);
 // ./modules/server内全てのjsをresuireする
 // app(express)を読み込めるようにするため
 //common.require_of_all_js('./modules/lib');
+
 
 // メインの開始
 var main = require('./modules/main.js');
