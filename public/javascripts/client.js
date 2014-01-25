@@ -1,5 +1,6 @@
 // WebSocketサーバに接続
-var ws = new WebSocket('ws://172.16.145.136:8888/');
+//var ws = new WebSocket('ws://localhost:8888/');
+var ws = new WebSocket('ws://node_framework-c9-ryuusinnca.c9.io/');
 
 jQuery(function($) {
 	"use strict";
@@ -16,6 +17,9 @@ jQuery(function($) {
 		if(text !== ''){
 			//サーバにテキストを送信
 			socket.emit('message',{text:text});
+			ws.send(JSON.stringify({
+		      text: text
+		    }));
 			$('#list').prepend($('<div/>').text(text));
 			$('#input').val('');
 			//location.href = '/';
