@@ -35,9 +35,9 @@ app.set('io', io);
 // mysqlのインスタンス作成
 var mysql = require('mysql').createConnection({
   host: 'localhost',
-  database: 'node_game',
-  user: 'root',
-  password: '1234'
+  database: 'c9',
+  user: 'ryuusinnca',
+  password: ''
 });
 app.set('mysql', mysql);
 
