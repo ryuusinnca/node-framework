@@ -16,7 +16,7 @@ var query = mysql.query('select * from mst_users;', function (err, results) {
 //
 // 更新処理
 //
-/*
+
 exports.update = function(){
 	console.log("update");
 
@@ -45,22 +45,16 @@ exports.update = function(){
 		});
 	});
 };
-*/
 
+
+/*
 exports.update = function(){
 	// クライアントからの接続イベントを処理
 	server.on('connection', function(socket) {
 	  // クライアントからのメッセージ受信イベントを処理
 	  socket.on('message', function(data) {
 	  	console.log(data);
-	  	/*
-	    // 実行時間を追加
-	    var data = JSON.parse(data);
-	    var d = new Date();
-	    data.time = d.getFullYear()  + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-	    data = JSON.stringify(data);
-	    console.log('\033[96m' + data + '\033[39m');
-	    */
+
 	    // 受信したメッセージを全てのクライアントに送信する
 	    server.clients.forEach(function(client) {
 	      client.send(data);
@@ -68,5 +62,6 @@ exports.update = function(){
 	  });
 	});
 };
+*/
 
 
