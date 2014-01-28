@@ -38,7 +38,12 @@ var wsserver = ws.listen(8888, function(){
 app.set('wsserver', wsserver);
 
 //socket.ioのインスタンス作成
-var io = require('socket.io').listen(server);
+//var io = require('socket.io').listen(server);
+
+var io = require('socket.io').listen(
+  server
+  ,{ key : 'ryuusinnca'
+    ,cert : 'hogehoge1234' });
 app.set('io', io);
 
 // mysqlのインスタンス作成

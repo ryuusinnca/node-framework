@@ -16,7 +16,7 @@ var query = mysql.query('select * from mst_users;', function (err, results) {
 //
 // 更新処理
 //
-
+/*
 exports.update = function(){
 	console.log("update");
 
@@ -45,9 +45,9 @@ exports.update = function(){
 		});
 	});
 };
+*/
 
 
-/*
 exports.update = function(){
 	// クライアントからの接続イベントを処理
 	server.on('connection', function(socket) {
@@ -57,11 +57,15 @@ exports.update = function(){
 
 	    // 受信したメッセージを全てのクライアントに送信する
 	    server.clients.forEach(function(client) {
-	      client.send(data);
+	    	
+	    	if(client != null && socket != client){
+	    		console.log('send clients');
+	    		client.send(data);
+	    	}
 	    });
 	  });
 	});
 };
-*/
+
 
 
